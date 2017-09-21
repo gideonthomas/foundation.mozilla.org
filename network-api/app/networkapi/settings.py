@@ -174,7 +174,7 @@ if SOCIAL_SIGNIN:
         'social_core.pipeline.user.user_details',
     )
 
-PACKAGE_NAME_FILEBROWSER = 'filebrowser_safe'
+PACKAGE_NAME_FILEBROWSER = 'filebrowser'
 PACKAGE_NAME_GRAPPELLI = 'grappelli_safe'
 
 OPTIONAL_APPS = (

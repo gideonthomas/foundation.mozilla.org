@@ -3,7 +3,6 @@ from django.db import models
 from django.db.models import Q
 
 from networkapi.utility.images import get_image_upload_path
-from filebrowser_safe.fields import FileBrowseField
 
 
 def get_news_glyph_upload_path(instance, filename):
@@ -68,11 +67,11 @@ class News(models.Model):
         blank=True,
         null=True,
     )
-    glyph = FileBrowseField(
-        directory="images/glyphs",
+    glyph = models.FileField(
         max_length=2048,
         help_text='Image associated with the article source. ' +
         'Unsure of what to use? Leave blank and ask a designer',
+        upload_to=get_news_glyph_upload_path,
         null=True,
         blank=True,
     )
